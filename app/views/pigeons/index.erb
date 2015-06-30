@@ -3,7 +3,22 @@
   <h1>Pigeons</h1>
   
   <!-- show a table that lists all pigeons here -->
+<head>
+<table>
+  <tr>
+    <% @pigeon.each do |p| %>
+      <td><%= p.name %></td>
+      <td><%= p.color %></td>
+      <td><%= p.lives %></td>
+      <td><%= p.gender %></td>
+  </tr>
 
+    <% end %>
+
+</table>
+
+
+</head>
   <a class="button" href="/pigeons/new">New Pigeon</a>
   
 <%= erb :'layouts/_footer' %>

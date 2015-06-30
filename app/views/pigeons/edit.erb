@@ -4,6 +4,26 @@
 
 <!-- form goes here -->
 
-<a class="button" href="/pigeons">Cancel</a>
+<form action="/pigeons/<%= @pigeon.id %>" method="POST">
+<input type="hidden" name="_method" value="PATCH" /> 
 
+    Name:  <input type="text" name="pigeon[name]" value=<%=@pigeon.name%>>
+    <br>
+    Color:  <input type="text" name="pigeon[color]" value=<%=@pigeon.color%>>
+    <br>
+    Lives:  <input type="text" name="pigeon[lives]" value=<%=@pigeon.lives%>>
+    <br>
+    Gender:  <input type="text" name="pigeon[gender]" value=<%=@pigeon.gender%>>
+      <input type="submit" value="Submit">
+
+</form>
+
+
+<form action="/pigeons/<%= @pigeon.id %>" method="POST">
+<input type="hidden" name="_method" value="DELETE" /> 
+      <input type="submit" value="Destroy">
+</form>
+
+<a class="button" href="/pigeons">Cancel</a>
+<!-- <a class="button" href="/pigeons">Submit</a> -->
 <%= erb :'layouts/_footer' %>
